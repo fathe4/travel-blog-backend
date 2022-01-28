@@ -63,9 +63,9 @@ async function run() {
             const category = req.body.category
             const location = req.body.location
             const description = req.body.description
-            const pic = req.files.url
-            const picData = pic.data
-            const encodedPic = picData.toString('base64')
+            const pic = req.body.url
+            // const picData = pic.data
+            // const encodedPic = picData.toString('base64')
             // const imageBuffer = Buffer.from(encodedPic, 'base64')
             const blogDetail = {
                 title,
