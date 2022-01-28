@@ -54,7 +54,7 @@ async function run() {
         app.post('/dashboard/addBlog', async (req, res) => {
 
             console.log('hitting blog');
-            const { admin, email, approval } = req.body
+            const { admin, email, approval, name, postedOn } = req.body
             const title = req.body.title
             const expense = req.body.expense
             const ratings = req.body.ratings
@@ -79,6 +79,8 @@ async function run() {
                 admin,
                 approval,
                 email,
+                name,
+                postedOn,
                 url: imageBuffer
             }
             const result = await travelBlogCollection.insertOne(blogDetail)
