@@ -66,7 +66,7 @@ async function run() {
             const pic = req.files.url
             const picData = pic.data
             const encodedPic = picData.toString('base64')
-            const imageBuffer = Buffer.from(encodedPic, 'base64')
+            // const imageBuffer = Buffer.from(encodedPic, 'base64')
             const blogDetail = {
                 title,
                 expense,
@@ -81,7 +81,7 @@ async function run() {
                 email,
                 name,
                 postedOn,
-                url: imageBuffer
+                url: pic
             }
             const result = await travelBlogCollection.insertOne(blogDetail)
             res.json(result)
